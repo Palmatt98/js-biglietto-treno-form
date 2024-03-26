@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.wrapper {
+	background-color: #b91450;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 20px;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+h1 {
+	color: white;
+	padding: 20px 0;
+}
+label{
+	display: block;
+}
+form{
+	display: flex;
+}
+.input{
+	padding: 20px;
+}
+.container {
+	border-radius: 10px;
+	padding: 20px;
+	background-color: white;
+	width: 80%;
+}

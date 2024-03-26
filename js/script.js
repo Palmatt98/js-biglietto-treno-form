@@ -2,8 +2,10 @@ const PRICE_PER_KM = 0.21; //number
 const DISCOUNT_UNDER_18 = 20; //number
 const DISCOUNT_OVER_65 = 40; //number
 
-let btn = document.getElementById("invia");
+// let btn = document.getElementById("invia");
+let btn = document.getElementById("submit");
 console.log("button element: ", btn);
+
 
 btn.addEventListener("click", function () {
 	console.log("il bottone invia è stato cliccato");
@@ -26,7 +28,7 @@ btn.addEventListener("click", function () {
 	//start calcolo del prezzo
 
 	let discountToApply = 0;
-	let finalTicketPrice;
+	let finalTicketPrice; //di default é undefined
 
 	if (userAge !== null && userAge > 0) {
 		//validazione età
@@ -46,4 +48,17 @@ btn.addEventListener("click", function () {
 	}
 
 	console.log("prezzo finale del biglietto: ", finalTicketPrice);
+
+	if (finalTicketPrice === undefined) {
+		document.getElementById("result").innerHTML = `L'utente ha inserito dati non validi!`;
+	} else {
+		document.getElementById("result").innerHTML = `
+			L'utente ha ${userAge} anni </br>
+			Deve percorrere ${kilometersToTravel} chilometro/i </br>
+			Gli spetta uno sconto pari a ${discountToApply.toFixed(2)} € </br>
+			Il prezzo finlale del tuo biglietto é ${finalTicketPrice} €.
+		`;
+	}
+
 });
+
